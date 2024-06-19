@@ -9,14 +9,16 @@ import (
 
 func TestFastPoweOf(t *testing.T) {
 	for _, test := range tests {
-		result := FastPowerOf(test.args.value, test.args.exp)
-		if test.result.positive {
-			assert.Equal(t, test.result.expected, result,
-				fmt.Sprintf("%f ^ %d = %f but not %f",
-					test.args.value, test.args.exp, test.result.expected, result))
-		} else {
-			assert.NotEqual(t, test.result.expected, result)
-		}
+		t.Run(fmt.Sprintf("testing value %v^%v->%v", test.args.value, test.args.exp, test.result.expected), func(t *testing.T) {
+			result := FastPowerOf(test.args.value, test.args.exp)
+			if test.result.positive {
+				assert.Equal(t, test.result.expected, result,
+					fmt.Sprintf("%f ^ %d = %f but not %f",
+						test.args.value, test.args.exp, test.result.expected, result))
+			} else {
+				assert.NotEqual(t, test.result.expected, result)
+			}
+		})
 	}
 }
 

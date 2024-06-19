@@ -34,9 +34,11 @@ var testsOfPowerOf10 = []CaseForPowerOf10{
 
 func TestIsPowerOf10(t *testing.T) {
 	for _, test := range testsOfPowerOf10 {
-		result := IsPowerOf10(test.value)
-		assert.Equal(t, test.expected, result,
-			fmt.Sprintf("%v is a power of 10: %v", test.value, test.expected))
+		t.Run(fmt.Sprintf("testing value %v->%v", test.value, test.expected), func(t *testing.T) {
+			result := IsPowerOf10(test.value)
+			assert.Equal(t, test.expected, result,
+				fmt.Sprintf("%v is a power of 10: %v", test.value, test.expected))
+		})
 	}
 }
 
