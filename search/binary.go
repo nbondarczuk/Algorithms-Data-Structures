@@ -1,5 +1,5 @@
 package search
 
-func Binary(tab []int, e int) (int, bool) {
+func Binary[T comparable](tab []T, e T) (int, bool) {
 	return -1, false
 }
