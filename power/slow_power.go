@@ -1,4 +1,4 @@
-package algdatstr
+package power
 
 // The cost is O(N) where N = n
 func SlowPowerOf(x float64, n int) float64 {

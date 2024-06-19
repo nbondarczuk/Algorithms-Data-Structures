@@ -1,4 +1,4 @@
-package algdatstr
+package power
 
 type (
 	Args struct {

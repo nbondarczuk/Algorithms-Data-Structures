@@ -1,4 +1,4 @@
-package algdatstr
+package power
 
 // The cost is O(log N) where N = n
 func FastPowerOf(x float64, n int) float64 {

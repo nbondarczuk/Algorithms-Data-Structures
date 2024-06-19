@@ -1,4 +1,4 @@
-package algdatstr
+package power
 
 import (
 	"fmt"
