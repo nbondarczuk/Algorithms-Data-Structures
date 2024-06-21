@@ -1,0 +1,18 @@
+PROCEDURE Search(VAR p, s: ARRAY OF CHAR; m, n: INTEGER; VAR r: INTEGER);
+   (*search for pattern p of length m in text s of length n; m <= Mmax*)
+   (*if p is found, then r indicates the position in s, otherwise r = -1*)
+   VAR i, j, k: INTEGER;
+      d: ARRAY Mmax OF INTEGER;
+BEGIN j := 0; k := -1; d[0] := -1; (*compute d from p*)
+   WHILE j < m-1 DO
+      WHILE (k >= 0) & (p[j] # p[k]) DO k := d[k] END ;
+      INC(j); INC(k);
+      IF p[j] = p[k] THEN d[j] := d[k] ELSE d[j] := k END
+   END ;
+   i := 0; j := 0; k := 0; (*search p in s*)
+   WHILE (j < m) & (i < n) DO
+      WHILE (j >= 0) & (s[i] # p[j]) DO j := d[j] END ;
+      INC(i); INC(j)
+   END ;
+   IF j = m THEN r := i-m ELSE r := -1 END
+END Search
