@@ -8,6 +8,7 @@ test:
 bench:
 	cd power; go test -bench=. | tee ../bench-power.lst
 	cd search; go test -bench=. | tee ../bench-search.lst
+	cd search/text; go test -bench=. | tee ../../bench-search-text.lst
 
 clean:
 	find . -name '*~' -exec rm {} \;
