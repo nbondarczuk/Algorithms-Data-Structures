@@ -1,0 +1,9 @@
+PROCEDURE StraightInsertion;
+   VAR i, j: INTEGER; x: Item;
+BEGIN
+   FOR i := 1 TO n-1 DO
+      x := a[i]; j := i;
+      WHILE (j > 0) & (x < a[j-1] DO a[j] := a[j-1]; DEC(j) END ;
+      a[j] := x
+   END
+END StraightInsertion
