@@ -1,6 +1,8 @@
 package sort
 
-func StraightInsert(tab []int) []int {
+import "golang.org/x/exp/constraints"
+
+func StraightInsert[T constraints.Ordered](tab []T) []T {
 	var i, j int
 	n := len(tab)
 	for i = 1; i <= n-1; i++ {

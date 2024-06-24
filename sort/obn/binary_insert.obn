@@ -1,0 +1,13 @@
+PROCEDURE BinaryInsertion(VAR a: ARRAY OF Item; n: INTEGER);
+   VAR i, j, m, L, R: INTEGER; x: Item;
+BEGIN
+   FOR i := 1 TO n-1 DO
+      x := a[i]; L := 1; R := i;
+      WHILE L < R DO
+         m := (L+R) DIV 2;
+         IF a[m] <= x THEN L := m+1 ELSE R := m END
+      END ;
+      FOR j := i TO R+1 BY -1 DO a[j] := a[j-1] END ;
+      a[R] := x
+   END
+END BinaryInsertion

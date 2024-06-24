@@ -1,7 +1,9 @@
 package search
 
+import "golang.org/x/exp/constraints"
+
 // Cost is O(log N)
-func Binary[T ~byte | ~rune | ~int | ~uint | ~float32 | ~float64 | ~string](tab []T, e T) (int, bool) {
+func Binary[T constraints.Ordered](tab []T, e T) (int, bool) {
 	var left, right, middle int
 	right = len(tab) - 1
 	for {
