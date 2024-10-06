@@ -1,6 +1,10 @@
 package sort
 
-import "golang.org/x/exp/constraints"
+import (
+	"fmt"
+
+	"golang.org/x/exp/constraints"
+)
 
 func StraightInsert[T constraints.Ordered](tab []T) []T {
 	var i, j int
@@ -13,6 +17,9 @@ func StraightInsert[T constraints.Ordered](tab []T) []T {
 			j--
 		}
 		tab[j] = x
+		if Debug {
+			fmt.Printf("Tab: %+v\n", tab)
+		}
 	}
 	return tab
 }

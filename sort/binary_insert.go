@@ -1,6 +1,10 @@
 package sort
 
-import "golang.org/x/exp/constraints"
+import (
+	"fmt"
+
+	"golang.org/x/exp/constraints"
+)
 
 func bsearch[T constraints.Ordered](tab []T, L, R int, x T) int {
 	var m int
@@ -25,6 +29,9 @@ func BinaryInsert[T constraints.Ordered](tab []T) []T {
 			tab[j+1] = tab[j]
 		}
 		tab[p] = x
+		if Debug {
+			fmt.Printf("Tab: %+v\n", tab)
+		}
 	}
 	return tab
 }

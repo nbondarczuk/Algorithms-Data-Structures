@@ -3,7 +3,7 @@
 ## Sources:
 
 * N. Wirth: Algorithms and Data Structures in Golang
-* D. Knuth: The Art of Computer Programming
+* D. Knuth: The Art of Computer Programming vol 3 Sorting and searching
 
 ### Comment
 
