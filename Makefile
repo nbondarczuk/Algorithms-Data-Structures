@@ -1,7 +1,3 @@
-init:
-	go mod init algdatstr
-	go mod tidy
-
 test:
 	go test -v ./...
 
@@ -10,6 +6,13 @@ bench:
 	cd search; go test -bench=. | tee ../bench-search.lst
 	cd search/text; go test -bench=. | tee ../../bench-search-text.lst
 	cd sort; go test -bench=. | tee ../../bench-sort.lst
+
+init:
+	go mod init algdatstr
+
+tidy:
+	go mod tidy
+
 
 clean:
 	find . -name '*~' -exec rm {} \;

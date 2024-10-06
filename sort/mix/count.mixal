@@ -1,0 +1,6 @@
+START   ENT1  N
+        STZ   COUNT,1
+        DEC1  1
+        J1P   *-2
+        ENT1  N
+        JMP   1F

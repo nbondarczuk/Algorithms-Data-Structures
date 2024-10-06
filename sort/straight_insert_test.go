@@ -12,7 +12,9 @@ func TestStraightInsert(t *testing.T) {
 		t.Run(fmt.Sprintf("testing value %v->%v",
 			test.args.tab, test.expected.tab),
 			func(t *testing.T) {
-				result := StraightInsert(test.args.tab)
+				tab := make([]int, len(test.args.tab), len(test.args.tab))
+				copy(tab, test.args.tab)
+				result := StraightInsert(tab)
 				assert.Equal(t, test.expected.tab, result)
 			})
 	}
